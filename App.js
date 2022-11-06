@@ -14,6 +14,7 @@ import ManageExpense from './screen/ManageExpense';
 import RecentExpense from './screen/RecentExprense'
 import { GlobalStyles } from './constants/styles';
 import IconButton from './components/UI/IconButton';
+import ExpenseContextProvider from './store/expense-context';
 const Stack = createNativeStackNavigator();
 const BottomTabs = createBottomTabNavigator();
 
@@ -52,7 +53,8 @@ function ExpenseOverView () {
 function App (){
   return (
     <>
-    <StatusBar style="auto"/>
+    <StatusBar style="dark"/>
+    <ExpenseContextProvider>
     <NavigationContainer>
       <Stack.Navigator initialRouteName='ExpensesOverview'
       screenOptions={{
@@ -74,6 +76,7 @@ function App (){
       />
       </Stack.Navigator>
     </NavigationContainer>
+    </ExpenseContextProvider>
     </>
   );
 };
