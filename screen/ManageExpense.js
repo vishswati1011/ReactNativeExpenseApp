@@ -4,6 +4,7 @@ import IconButton from '../components/UI/IconButton';
 import { GlobalStyles } from '../constants/styles';
 import Button from '../components/UI/Button';
 import {ExpensesContext} from '../store/expense-context';
+import ExpenseForm from '../components/ManageExpense/ExpenseForm';
 
 function ManageExpense ({route,navigation}){
 
@@ -26,13 +27,13 @@ function ManageExpense ({route,navigation}){
             expenseCtx.updateExpense(
                 editedExpenseId,
                 {
-                    description:"Test!!!!!",
+                    description:"Notes!!!!!",
                     amount:19.99,
-                    date : new Date('2022-12-20')
+                    date : new Date('2022-11-20')
                 }
                 )
             }else{
-                expenseCtx.addExpense({description:"Test",amount:19.99,date : new Date('2022-5-20')})
+                expenseCtx.addExpense({description:"Notes new",amount:19.99,date : new Date('2022-11-6')})
             }
             navigation.goBack();
 
@@ -43,6 +44,8 @@ function ManageExpense ({route,navigation}){
     }
     return (
     <View style={styles.container}>
+    <ExpenseForm/>
+
     <View style={styles.buttons} >
         <Button style={styles.button} mode="flat" onPress={cancelHandler} >
              Cancel
@@ -76,7 +79,7 @@ const styles =StyleSheet.create({
     alignItems:'center',
     },
     button:{
-        width:128,
+        width:200,
         marginHorizontal:8
     },
     deleteContainer :{

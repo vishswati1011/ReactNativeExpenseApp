@@ -6,6 +6,7 @@ import ExpenseSummary from './ExpenseSummary';
 
 function ExpensesOutput({ expenses ,expensesPeriod,fallbackText }) {
     let content = <Text style={styles.infoText}>{fallbackText}</Text>;
+    console.log("Expense",expenses)
 
     if(expenses.length>0)
     {

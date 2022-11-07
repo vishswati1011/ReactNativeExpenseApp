@@ -5,10 +5,12 @@ import ExpensesOutput from '../components/ExpensesOutput/ExpenseOutput';
 
 function RecentExpense (){
     const expenseCtx=useContext(ExpensesContext)
+    
     const recentExpenses = expenseCtx.expenses.filter((expense)=>{
         const today =new Date();
         const date7DaysAgo = getDateMinusDays(today,7);
-        return (expense.date >date7DaysAgo) && (expense.date <=today);
+
+        return (expense.date >date7DaysAgo)  && (expense.date <=today);
 
     })
 
