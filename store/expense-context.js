@@ -6,7 +6,7 @@ const DUMMY_EXPENSES =[
         amount : 59.99,
         date : new Date ('2022-12-19')
     },
-    {
+    {      
         id :'e2',
         description :'Some Mango',
         amount : 60.99,
